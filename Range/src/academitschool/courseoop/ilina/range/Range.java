@@ -1,4 +1,4 @@
-package homework1;
+package academitschool.courseoop.ilina.range;
 
 public class Range {
     private double from;
@@ -25,14 +25,11 @@ public class Range {
         this.to = to;
     }
 
-    public double getLengthRange() {
+    public double getLength() {
         return to - from;
     }
 
     public boolean isInside(double number) {
-        double firstBorder = getFrom();
-        double secondBorder = getTo();
-
-        return number >= firstBorder && number <= secondBorder;
+        return number >= from && number <= to;
     }
 }
