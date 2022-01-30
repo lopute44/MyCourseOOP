@@ -9,6 +9,9 @@ public class Range {
         this.to = to;
     }
 
+    public Range() {
+    }
+
     public double getFrom() {
         return from;
     }
@@ -31,5 +34,26 @@ public class Range {
 
     public boolean isInside(double number) {
         return number >= from && number <= to;
+    }
+
+    public Range getIntersectionRanges(Range range) {
+        Range intersectionRanges = new Range();
+        if (this.getFrom() <= range.getFrom()) {
+            if (this.getTo() <= range.getFrom()) {
+                return null;
+            } else {
+                intersectionRanges.setFrom(range.getFrom());
+                intersectionRanges.setTo(Math.min(this.getTo(), range.getTo()));
+                return intersectionRanges;
+            }
+        } else {
+            if (range.getTo() <= this.getFrom()) {
+                return null;
+            } else {
+                intersectionRanges.setFrom(this.getFrom());
+                intersectionRanges.setTo(Math.min(range.getTo(), this.getTo()));
+                return intersectionRanges;
+            }
+        }
     }
 }
