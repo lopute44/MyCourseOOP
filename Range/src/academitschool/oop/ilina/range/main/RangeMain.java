@@ -1,17 +1,17 @@
-package academitschool.courseoop.ilina.main;
+package academitschool.oop.ilina.range.main;
 
-import academitschool.courseoop.ilina.range.Range;
+import academitschool.oop.ilina.range.range.Range;
 
 import java.util.Scanner;
 
-public class MainRange {
+public class RangeMain {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Введите любое число:");
         double number = scanner.nextDouble();
 
-        academitschool.courseoop.ilina.range.Range range = new academitschool.courseoop.ilina.range.Range(1.7, 67.3);
+        Range range = new Range(1.7, 67.3);
 
         if (range.isInside(number)) {
             System.out.println("Диапазон включает введенное число.");
@@ -28,9 +28,7 @@ public class MainRange {
                 }
             } while (!range.isInside(number));
 
-            System.out.println("Ввведнное число пападает в диапазон.");
+            System.out.println("Введнное число попадает в диапазон.");
         }
-
-        // проверка для задачи range
     }
 }
