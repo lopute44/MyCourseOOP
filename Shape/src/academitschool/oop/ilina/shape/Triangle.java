@@ -47,4 +47,24 @@ public class Triangle implements Shape {
     public double min(double x1, double x2, double x3) {
         return Math.min(Math.min(x1, x2), x3);
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+
+        if (o == null || getClass() != o.getClass()) return false;
+
+        return (x1 == ((Triangle) o).x1) && (y1 == ((Triangle) o).y1) && (x2 == ((Triangle) o).x2) && (y2 == ((Triangle) o).y2) &&
+                (x3 == ((Triangle) o).x3) && (y3 == ((Triangle) o).y3);
+    }
+
+    @Override
+    public int hashCode() {
+        return (int) getArea();
+    }
+
+    @Override
+    public String toString() {
+        return "Треугольник с координатами вершин (" + x1 + "; " + y1 + "), (" + x2 + "; " + y2 + "), (" + x3 + "; " + y3 + ")";
+    }
 }

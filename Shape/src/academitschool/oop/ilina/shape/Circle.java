@@ -26,4 +26,23 @@ public class Circle implements Shape {
     public double getPerimeter() {
         return 2 * 3.14 * radius;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+
+        if (o == null || getClass() != o.getClass()) return false;
+
+        return radius == ((Circle) o).radius;
+    }
+
+    @Override
+    public int hashCode() {
+        return (int) radius;
+    }
+
+    @Override
+    public String toString() {
+        return "Окружность с радиусом " + radius;
+    }
 }

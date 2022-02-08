@@ -1,7 +1,7 @@
 package academitschool.oop.ilina.shape;
 
-public class Square implements Shape{
-    private double sideLength;
+public class Square implements Shape {
+    private final double sideLength;
 
     public Square(double sideLength) {
         this.sideLength = sideLength;
@@ -25,5 +25,24 @@ public class Square implements Shape{
     @Override
     public double getPerimeter() {
         return sideLength * 4;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+
+        if (o == null || getClass() != o.getClass()) return false;
+
+        return sideLength == ((Square) o).sideLength;
+    }
+
+    @Override
+    public int hashCode() {
+        return (int) sideLength;
+    }
+
+    @Override
+    public String toString() {
+        return "Квадрат со стороной " + sideLength;
     }
 }
