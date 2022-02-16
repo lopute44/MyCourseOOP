@@ -1,6 +1,6 @@
 package academitschool.oop.ilina.range.main;
 
-import academitschool.oop.ilina.range.range.Range;
+import academitschool.oop.ilina.range.Range;
 
 import java.util.Scanner;
 
