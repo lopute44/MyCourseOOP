@@ -31,16 +31,28 @@ public class Rectangle implements Shape {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
+        if (this == o) {
+            return true;
+        }
 
-        if (o == null || getClass() != o.getClass()) return false;
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
-        return width == ((Rectangle) o).width && height == ((Rectangle) o).height;
+        Rectangle rectangle = (Rectangle) o;
+
+        return width == rectangle.width && height == rectangle.height;
     }
 
     @Override
     public int hashCode() {
-        return (int) getArea();
+        final int prime = 17;
+        int hash = 1;
+
+        hash = prime * hash + Double.hashCode(width);
+        hash = prime * hash + Double.hashCode(height);
+
+        return hash;
     }
 
     @Override

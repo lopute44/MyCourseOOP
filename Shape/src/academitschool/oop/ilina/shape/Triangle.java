@@ -8,6 +8,30 @@ public class Triangle implements Shape {
     private final double x3;
     private final double y3;
 
+    public double getX1() {
+        return x1;
+    }
+
+    public double getY1() {
+        return y1;
+    }
+
+    public double getX2() {
+        return x2;
+    }
+
+    public double getY2() {
+        return y2;
+    }
+
+    public double getX3() {
+        return x3;
+    }
+
+    public double getY3() {
+        return y3;
+    }
+
     public Triangle(double x1, double y1, double x2, double y2, double x3, double y3) {
         this.x1 = x1;
         this.y1 = y1;
@@ -19,12 +43,12 @@ public class Triangle implements Shape {
 
     @Override
     public double getWidth() {
-        return max(x1, x2, x3) - min(x1, x2, x3);
+        return getMax(x1, x2, x3) - getMin(x1, x2, x3);
     }
 
     @Override
     public double getHeight() {
-        return max(y1, y2, y3) - min(y1, y2, y3);
+        return getMax(y1, y2, y3) - getMin(y1, y2, y3);
     }
 
     @Override
@@ -34,33 +58,51 @@ public class Triangle implements Shape {
 
     @Override
     public double getPerimeter() {
-        double a = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
-        double b = Math.sqrt(Math.pow(x3 - x1, 2) + Math.pow(y3 - y1, 2));
-        double c = Math.sqrt(Math.pow(x3 - x2, 2) + Math.pow(y3 - y2, 2));
-        return a + b + c;
+        return getSideOfTriangle(x1, y1, x2, y2) + getSideOfTriangle(x1, y1, x3, y3) + getSideOfTriangle(x2, y2, x3, y3);
     }
 
-    public double max(double x1, double x2, double x3) {
-        return Math.max(Math.max(x1, x2), x3);
+    private static double getMax(double number1, double number2, double number3) {
+        return Math.max(Math.max(number1, number2), number3);
     }
 
-    public double min(double x1, double x2, double x3) {
-        return Math.min(Math.min(x1, x2), x3);
+    private static double getMin(double number1, double number2, double number3) {
+        return Math.min(Math.min(number1, number2), number3);
+    }
+
+    private double getSideOfTriangle(double coordinateX1, double coordinateY1, double coordinateX2, double coordinateY2) {
+        return Math.sqrt(Math.pow(coordinateX1 - coordinateX2, 2) + Math.pow(coordinateY1 - coordinateY2, 2));
     }
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
+        if (this == o) {
+            return true;
+        }
 
-        if (o == null || getClass() != o.getClass()) return false;
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
-        return (x1 == ((Triangle) o).x1) && (y1 == ((Triangle) o).y1) && (x2 == ((Triangle) o).x2) && (y2 == ((Triangle) o).y2) &&
-                (x3 == ((Triangle) o).x3) && (y3 == ((Triangle) o).y3);
+        Triangle triangle = (Triangle) o;
+
+        return (x1 == triangle.x1) && (y1 == triangle.y1)
+                && (x2 == triangle.x2) && (y2 == triangle.y2)
+                && (x3 == triangle.x3) && (y3 == triangle.y3);
     }
 
     @Override
     public int hashCode() {
-        return (int) getArea();
+        final int prime = 10;
+        int hash = 1;
+
+        hash = prime * hash + Double.hashCode(x1);
+        hash = prime * hash + Double.hashCode(y1);
+        hash = prime * hash + Double.hashCode(x2);
+        hash = prime * hash + Double.hashCode(y2);
+        hash = prime * hash + Double.hashCode(x3);
+        hash = prime * hash + Double.hashCode(y3);
+
+        return hash;
     }
 
     @Override
