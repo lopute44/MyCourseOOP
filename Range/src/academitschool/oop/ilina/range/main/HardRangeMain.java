@@ -11,20 +11,22 @@ public class HardRangeMain {
 
         if (intersectionRange == null) {
             System.out.println("У диапазонов нет пересечения!");
-        } else System.out.println("Координаты пересечения диапазонов: " + intersectionRange);
+        } else {
+            System.out.println("Координаты пересечения диапазонов: " + intersectionRange);
+        }
 
-        Range[] combiningRanges = range1.getUnion(range2);
+        Range[] unionRanges = range1.getUnion(range2);
 
-        for (Range range : combiningRanges) {
+        for (Range range : unionRanges) {
             System.out.println("Диапазон объединения: " + range);
         }
 
-        Range[] subtractionRanges = range1.getDifference(range2);
+        Range[] differenceRanges = range1.getDifference(range2);
 
-        if (subtractionRanges.length == 0) {
-            System.out.println("Диапазоны равны!");
+        if (differenceRanges.length == 0) {
+            System.out.println("Результат операции вычитания равен нулю!");
         } else {
-            for (Range range : subtractionRanges) {
+            for (Range range : differenceRanges) {
                 System.out.println("Диапазон разности: " + range);
             }
         }
