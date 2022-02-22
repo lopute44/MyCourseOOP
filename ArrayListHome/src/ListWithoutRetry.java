@@ -17,9 +17,8 @@ public class ListWithoutRetry {
         boolean flag = false;
 
         for (int i = 1; i < list.size(); i++) {
-            for (int j = 0; j < newList.size(); j++) {
-                if (list.get(i) == newList.get(j)) {
-                    j--;
+            for (Integer integer : newList) {
+                if (list.get(i).equals(integer)) {
                     flag = true;
                     break;
                 }
