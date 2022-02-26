@@ -34,6 +34,10 @@ public class Vector {
         components = Arrays.copyOf(array, n);
     }
 
+    public double[] getComponents() {
+        return components;
+    }
+
     public int getSize() {
         return n;
     }

@@ -24,10 +24,20 @@ public class ShapeMain {
         }
 
         Shape shapeWithMaxArea = getShapeWithMaxArea(shapes);
-        System.out.println("Наибольшую площадь имеет фигура " + shapeWithMaxArea + ", площадь равна " + shapeWithMaxArea.getArea());
+
+        if (shapeWithMaxArea == null) {
+            System.out.println("Фигуры с максимальной площадью не существует");
+        } else {
+            System.out.println("Наибольшую площадь имеет фигура " + shapeWithMaxArea + ", площадь равна " + shapeWithMaxArea.getArea());
+        }
 
         Shape shapeWithMaxSecondPerimeter = getShapeWithMaxSecondPerimeter(shapes);
-        System.out.println("Второй по величине периметр имеет фигура " + shapeWithMaxSecondPerimeter + ", периметр равен " + shapeWithMaxSecondPerimeter.getPerimeter());
+
+        if (shapeWithMaxSecondPerimeter == null) {
+            System.out.println("Второй по величине периметр равен null");
+        } else {
+            System.out.println("Второй по величине периметр имеет фигура " + shapeWithMaxSecondPerimeter + ", периметр равен " + shapeWithMaxSecondPerimeter.getPerimeter());
+        }
     }
 
     public static Shape getShapeWithMaxArea(Shape[] shapes) {
