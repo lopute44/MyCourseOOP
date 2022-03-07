@@ -1,12 +1,10 @@
 import java.io.BufferedReader;
-import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class ListFromFile {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args){
         String fileName = "input.txt";
         try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
             ArrayList<String> list = new ArrayList<>();
