@@ -13,31 +13,34 @@ public class VectorMain {
 
         System.out.println();
 
-        Vector vector3 = Vector.getUnion(vector1, vector2);
+        Vector vector3 = Vector.getSum(vector1, vector2);
         System.out.println("Результат сложения, вычисленного с помощью статического метода: " + vector3);
 
         vector3 = Vector.getDifference(vector1, vector2);
 
         System.out.println("Результат вычитания второго вектора из первого, вычисленного с помощью статического метода: " + vector3);
 
-        vector1.getUnion(vector2);
-        System.out.println("Результат сложения, вычисленного с помощью нестатического метода: " + vector1);
+        vector2.addVector(vector1);
+        System.out.println("Результат сложения, вычисленного с помощью нестатического метода: " + vector2);
 
-        vector1.setComponentByIndex(vector2.getComponentByIndex(2), 2);
+        vector1.setComponentByIndex(2, vector2.getComponentByIndex(2));
         System.out.println("В первом векторе заменили компоненту с индексом 2, на компоненты с тем же индексом второго вектора: " + vector1);
 
-        vector1.increaseByScalar(25);
+        vector1.multiplyByScalar(25);
         System.out.println("Первый ветор умножили на скаляр, равный 25: " + vector1);
 
-        vector2.inverse();
+        vector2.expend();
         System.out.println("Второй вектор, после разворота: " + vector2);
 
         System.out.println("Длина первого вектора: " + vector1.getLength());
 
         System.out.println("Результат сравнения векторов после преобразований: " + vector1.equals(vector2));
 
-        vector2.getDifference(vector1);
+        vector2.subtractVector(vector1);
         System.out.println("Результат вычитания первого вектора из второго, вычисленного с помощью нестатического метода: " + vector2);
+
+        Vector vector4 = Vector.increaseVectors(vector1, vector2);
+        System.out.println("Результат скалярного произведения двух векторов: " + vector4);
 
         System.out.println("Вектора после всех преобразований:");
         System.out.println("первый вектор: " + vector1);
