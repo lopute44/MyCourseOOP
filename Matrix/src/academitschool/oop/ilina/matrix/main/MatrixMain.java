@@ -5,7 +5,7 @@ import academitschool.oop.ilina.vector.Vector;
 
 public class MatrixMain {
     public static void main(String[] args) {
-        Matrix matrix = new Matrix(5,3);
+        /*Matrix matrix = new Matrix(5,3);
 
         System.out.println(matrix);
 
@@ -83,6 +83,6 @@ public class MatrixMain {
         Matrix matrix8 = new Matrix(array1);
 
         System.out.println("Значение определителя матрицы:");
-        System.out.println(matrix8.getDeterminant());
+        System.out.println(matrix8.getDeterminant());*/
     }
 }

@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 
 public class Matrix {
-    private int n;
+    /*private int n;
     private int m;
     private Vector[] arrayVectors;
 
@@ -64,7 +64,7 @@ public class Matrix {
         arrayVectors = new Vector[m];
 
         for (int i = 0; i < m; i++) {
-            arrayVectors[i] = new Vector(n, array[i].getComponents());
+            arrayVectors[i] = new Vector(n, array[i].getComponentByIndex());
         }
     }
 
@@ -206,7 +206,7 @@ public class Matrix {
         }
 
         for (int i = 0; i < m; i++) {
-            arrayVectors[i] = Vector.increaseVectors(arrayVectors[i], vector);
+            arrayVectors[i] = Vector.getScalarResult(arrayVectors[i], vector);
         }
     }
 
@@ -260,9 +260,9 @@ public class Matrix {
         Matrix newMatrix = new Matrix(matrix1.n, matrix1.m);
 
         for (int i = 0; i < newMatrix.m; i++) {
-            newMatrix.arrayVectors[i] = Vector.increaseVectors(matrix1.getVectorByIndex(i), matrix2.getVectorByIndex(i));
+            newMatrix.arrayVectors[i] = Vector.getScalarResult(matrix1.getVectorByIndex(i), matrix2.getVectorByIndex(i));
         }
 
         return newMatrix;
-    }
+    }*/
 }
