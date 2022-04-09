@@ -1,12 +1,17 @@
 package academitschool.oop.ilina.list;
 
-public class ListItem<T> {
+class ListItem<T> {
     private T data;
     private   ListItem<T> next;
 
     public ListItem(T data, ListItem<T> next) {
         this.data = data;
         this.next = next;
+    }
+
+    public ListItem(T data) {
+        this.data = data;
+        next = null;
     }
 
     public T getData() {
@@ -25,8 +30,4 @@ public class ListItem<T> {
         this.next = next;
     }
 
-    @Override
-    public String toString(){
-        return data.toString();
-    }
 }
