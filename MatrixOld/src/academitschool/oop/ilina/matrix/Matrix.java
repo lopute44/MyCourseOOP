@@ -1,13 +1,9 @@
 package academitschool.oop.ilina.matrix;
 
 import academitschool.oop.ilina.vector.Vector;
-
 import java.util.Arrays;
 
-
 public class Matrix {
-    /*private int n;
-    private int m;
     private Vector[] arrayVectors;
 
     public Vector[] getArrayVectors() {
@@ -15,8 +11,6 @@ public class Matrix {
     }
 
     public Matrix(int n, int m) {
-        this.n = n;
-        this.m = m;
         arrayVectors = new Vector[m];
 
         for (int i = 0; i < m; i++) {
@@ -25,54 +19,32 @@ public class Matrix {
     }
 
     public Matrix(Matrix matrix) {
-        n = matrix.n;
-        m = matrix.m;
-        arrayVectors = new Vector[m];
-
-        for (int i = 0; i < m; i++) {
-            arrayVectors[i] = new Vector(matrix.arrayVectors[i]);
-        }
+        this.arrayVectors = matrix.arrayVectors;
     }
 
     public Matrix(double[][] array) {
-        m = array.length;
-        n = 0;
+        arrayVectors = new Vector[array.length];
 
-        for (double[] d : array) {
-            if (d.length > n) {
-                n = d.length;
-            }
-        }
+        int rowLength = array[0].length;
 
-        arrayVectors = new Vector[m];
-
-        for (int i = 0; i < m; i++) {
-            arrayVectors[i] = new Vector(Arrays.copyOf(array[i], n));
+        for (int i = 0; i < rowLength; i++) {
+            arrayVectors[i] = new Vector(Arrays.copyOf(array[i], rowLength));
         }
     }
 
     public Matrix(Vector[] array) {
-        m = array.length;
-        n = 0;
+        arrayVectors = new Vector[array.length];
 
-        for (Vector v : array) {
-            if (v.getSize() > n) {
-                n = v.getSize();
-            }
-        }
-
-        arrayVectors = new Vector[m];
-
-        for (int i = 0; i < m; i++) {
-            arrayVectors[i] = new Vector(n, array[i].getComponentByIndex());
+        for (int i = 0; i < array.length; i++) {
+            arrayVectors[i] = new Vector(array[i]);
         }
     }
 
     public int[] getSize() {
-        return new int[]{n, m};
+        return new int[]{arrayVectors.length, arrayVectors[0].getSize()};
     }
 
-    public Vector getVectorByIndex(int index) {
+    /*public Vector getVectorByIndex(int index) {
         return arrayVectors[index];
     }
 

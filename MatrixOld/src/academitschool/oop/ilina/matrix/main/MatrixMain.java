@@ -5,8 +5,9 @@ import academitschool.oop.ilina.vector.Vector;
 
 public class MatrixMain {
     public static void main(String[] args) {
-        /*Matrix matrix = new Matrix(5,3);
+        Matrix matrix = new Matrix(5,3);
 
+        System.out.println("Пустая матрица: ");
         System.out.println(matrix);
 
         Matrix matrix1 = new Matrix(matrix);
@@ -22,19 +23,23 @@ public class MatrixMain {
         Matrix matrix2 = new Matrix(array);
         System.out.println(matrix2);
 
+        Vector vector = new Vector(5);
+
         Vector vector1 = new Vector(5, new double[]{1, 2, 3, 4, 5});
         Vector vector2 = new Vector(3, new double[]{10, 20, 30});
         Vector vector3 = new Vector(3, new double[]{10});
 
         Vector[] arrayVectors = {vector1, vector2, vector3};
 
-        System.out.println("Матрица из массива векторов");
-        Matrix matrix3 = new Matrix(arrayVectors);
-        System.out.println(matrix3);
+        Matrix matrix33 = new Matrix(arrayVectors);
 
-        System.out.println("Размер матрицы: " + matrix3.getSize()[0] + ", " + matrix3.getSize()[1]);
+        //System.out.println("Матрица из массива векторов");
+        //Matrix matrix3 = new Matrix(arrayVectors);
+        //System.out.println(matrix3);
 
-        System.out.println("Вектор из матрицы с индексом 1: " + matrix3.getVectorByIndex(1));
+        //System.out.println("Размер матрицы: " + matrix3.getSize()[0] + ", " + matrix3.getSize()[1]);
+
+        /*System.out.println("Вектор из матрицы с индексом 1: " + matrix3.getVectorByIndex(1));
 
         System.out.println("Матрица после замены вектора с индексом 1:");
         matrix3.setVectorByIndex(vector1, 1);
