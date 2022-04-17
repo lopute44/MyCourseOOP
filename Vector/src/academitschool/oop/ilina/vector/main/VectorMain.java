@@ -39,7 +39,7 @@ public class VectorMain {
         vector2.subtract(vector1);
         System.out.println("Результат вычитания первого вектора из второго, вычисленного с помощью нестатического метода: " + vector2);
 
-        System.out.println("Результат скалярного произведения двух векторов: " + Vector.getScalarResult(vector1, vector2));
+        System.out.println("Результат скалярного произведения двух векторов: " + Vector.getScalarMultiply(vector1, vector2));
 
         System.out.println("Вектора после всех преобразований:");
         System.out.println("первый вектор: " + vector1);

@@ -81,13 +81,13 @@ public class Vector {
     }
 
     public double getLength() {
-        double squaresComponentsSum = 0;
+        double componentsSquaresSum = 0;
 
         for (double e : components) {
-            squaresComponentsSum += e * e;
+            componentsSquaresSum += e * e;
         }
 
-        return Math.sqrt(squaresComponentsSum);
+        return Math.sqrt(componentsSquaresSum);
     }
 
     public double getComponentByIndex(int index) {
@@ -110,10 +110,6 @@ public class Vector {
 
         Vector vector = (Vector) o;
 
-        if (components.length != vector.components.length) {
-            return false;
-        }
-
         return Arrays.equals(components, vector.components);
     }
 
@@ -128,26 +124,28 @@ public class Vector {
     }
 
     public static Vector getSum(Vector vector1, Vector vector2) {
-        Vector vector = new Vector(vector1);
+        Vector Result = new Vector(vector1);
 
-        vector.add(vector2);
-        return vector;
+        Result.add(vector2);
+        return Result;
     }
 
     public static Vector getDifference(Vector vector1, Vector vector2) {
-        Vector vector = new Vector(vector1);
+        Vector result = new Vector(vector1);
 
-        vector.subtract(vector2);
-        return vector;
+        result.subtract(vector2);
+        return result;
     }
 
-    public static double getScalarResult(Vector vector1, Vector vector2) {
-        double scalarResult = 0;
+    public static double getScalarMultiply(Vector vector1, Vector vector2) {
+        double scalarMultiply = 0;
 
-        for (int i = 0; i < Math.min(vector1.getSize(), vector2.getSize()); i++) {
-            scalarResult += vector1.components[i] * vector2.components[i];
+        int minSize = Math.min(vector1.getSize(), vector2.getSize());
+
+        for (int i = 0; i < minSize; i++) {
+            scalarMultiply += vector1.components[i] * vector2.components[i];
         }
 
-        return scalarResult;
+        return scalarMultiply;
     }
 }
