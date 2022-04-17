@@ -2,7 +2,7 @@ package academitschool.oop.ilina.list;
 
 class ListItem<T> {
     private T data;
-    private   ListItem<T> next;
+    private ListItem<T> next;
 
     public ListItem(T data, ListItem<T> next) {
         this.data = data;
@@ -11,14 +11,13 @@ class ListItem<T> {
 
     public ListItem(T data) {
         this.data = data;
-        next = null;
     }
 
     public T getData() {
         return data;
     }
 
-    public void setData(T data){
+    public void setData(T data) {
         this.data = data;
     }
 
@@ -29,5 +28,4 @@ class ListItem<T> {
     public void setNext(ListItem<T> next) {
         this.next = next;
     }
-
 }

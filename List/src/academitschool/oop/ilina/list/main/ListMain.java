@@ -2,6 +2,8 @@ package academitschool.oop.ilina.list.main;
 
 import academitschool.oop.ilina.list.SinglyLinkedList;
 
+import java.util.ArrayList;
+
 public class ListMain {
     public static void main(String[] args) {
         SinglyLinkedList<String> list = new SinglyLinkedList<>("String1");
