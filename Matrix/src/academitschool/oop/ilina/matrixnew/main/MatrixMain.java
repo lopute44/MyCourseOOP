@@ -41,7 +41,7 @@ public class MatrixMain {
         System.out.println("Вектор из матрицы с индексом 1: " + matrix4.getRowByIndex(1));
 
         System.out.println("Матрица после замены вектора с индексом 1:");
-        matrix4.setVectorByIndex(1, vector1);
+        matrix4.setRowByIndex(1, vector1);
         System.out.println(matrix4);
 
         System.out.println("Вектор из столбца по индексу 1: " + matrix4.getColumnByIndex(1));
@@ -85,7 +85,7 @@ public class MatrixMain {
         System.out.println(matrix8);
 
         System.out.println("Вычитание двух матриц с помощью статического метода:");
-        Matrix matrix9 = Matrix.getSubtract(matrix8, matrix7);
+        Matrix matrix9 = Matrix.getDifference(matrix8, matrix7);
         System.out.println(matrix9);
 
         double[][] array3 = {
@@ -106,7 +106,7 @@ public class MatrixMain {
         Matrix matrix11 = new Matrix(array4);
 
         System.out.println("Результат умножения двух матриц с помощью статического метода:");
-        Matrix matrix12 = Matrix.getMultiplication(matrix10, matrix11);
+        Matrix matrix12 = Matrix.getProduct(matrix10, matrix11);
         System.out.println(matrix12);
     }
 }
